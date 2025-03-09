@@ -1,24 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projekty</title>
+    <title>Projekty - Stanisław Tomkowiak</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <body>
-        <header class="header">
-            <h1>Projekty</h1>
-            <nav class="navigation">
-                <ul class="list">
-                    <li class="menu"><a href="main.html">O mnie</a></li>
-                    <li class="menu act"><a href="projects.html">Projekty</a></li>
-                    <li class="menu"><a href="interests.html">Zainteresowania</a></li>
-                    <li class="menu"><a href="contact.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <h1>Projekty</h1>
+        <nav>
+            <ul class="list">
+                <li class="menu"><a href="main.html">O mnie</a></li>
+                <li class="menu act"><a href="projects.html">Projekty</a></li>
+                <li class="menu"><a href="interests.html">Zainteresowania</a></li>
+                <li class="menu"><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main_projects"> 
+        <section class="projects">
+            <section class="projects_container">
+                <!-- Projekt 1 -->
+                <article class="project">
+                    <h3>Projekt 1</h3>
+                    <p>Opis projektu 1 – krótkie podsumowanie celu i funkcjonalności.</p>
+                    <div class="progress_bar">
+                        <div class="progress" style="width: 80%;">80%</div>
+                    </div>
+                    <a href="https://github.com/moje_repozytorium1" class="btn">Zobacz na GitHub</a>
+                </article>
+                <article class="image_project">
+                    <img src="images/me.jpg" alt="Projekt 1" class="image">
+                </article>
+
+                <!-- Projekt 2 -->
+                <article class="project">
+                    <h3>Projekt 2</h3>
+                    <p>Opis projektu 2 – krótkie podsumowanie celu i funkcjonalności.</p>
+                    <div class="progress_bar">
+                        <div class="progress" style="width: 60%;">60%</div>
+                    </div>
+                    <a href="https://github.com/moje_repozytorium2" class="btn">Zobacz na GitHub</a>
+                </article>
+                
+                <article class="image_project">
+                    <img src="images/test2.jpg" alt="Projekt 2" class="image">
+                </article>
     
+                <!-- Projekt 3 -->
+                <article class="project">
+                    <h3>Projekt 3</h3>
+                    <p>Opis projektu 3 – krótkie podsumowanie celu i funkcjonalności.</p>
+                    <div class="progress_bar">
+                        <div class="progress" style="width: 90%;">90%</div>
+                    </div>
+                    <a href="https://github.com/moje_repozytorium3" class="btn">Zobacz na GitHub</a>
+                </article>
+
+                <article class="image_project">
+                    <img src="images/test.jpg" alt="Projekt 3" class="image">
+                </article>
+                
+               
+                
+            </section>
+        </section>
+
+        <aside>
+            <h2>Inne informacje</h2>
+            <p>Tutaj możesz umieścić dodatkowe treści, np. technologie, których użyłeś w projektach.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Stanisław Tomkowiak</p>
+    </footer>
 </body>
 </html>
