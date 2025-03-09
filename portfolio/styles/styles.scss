@@ -43,14 +43,13 @@ header h1 {
             font-weight: bold;
             display: inline-block; 
             transition: all .4s ease-in-out;
-            &:hover,&:active {
+            &:hover {
                 transform: scale(1.4); 
                 color: var(--color-secondary);
                 
             }
         }
-    }
-    
+    } 
 }
 
 footer {
@@ -66,6 +65,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     min-height: 80vh;
+    
     .left_content{
         display: flex;
         align-items: center;
@@ -81,7 +81,9 @@ footer {
             clip-path: polygon(0 0, 0% 100%, 52% 88%);
         }
         .image {
-            max-width: 100%;
+
+            width: 100%;
+            max-width: 100%; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,24 +92,34 @@ footer {
                 height: auto; 
                 border-radius: var(--br-sm-2);
                 transition: all .4s ease-in-out;
-                &:hover,&:active { 
+                &:hover { 
                     transform: scale(1.05); 
                 }
             }
         }
     }
-    .right_content{ 
+    .right_content { 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Wyrównanie w pionie */
+        align-items: center; /* Wyrównanie w poziomie */
+        padding-right: 10rem;
+        .name {
+            width: 80%;
+            min-width: 250px;
+            font-size: 3rem;
+            text-align: center;
+        }
+        p {
+            width: 70%;
+            max-width: 400px;
+            min-width: 250px;
+            text-align: justify; 
+            padding: 1.5rem 1.5rem;
+            line-height: 2rem;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-right: 18rem;
-            .name {
-                font-size: 3rem;
-            }
-            p {
-                margin: 1.5rem 0;
-                line-height: 2rem;
-            }
+            justify-content: center; 
+        }
     }
 }
 @media (max-width: 810px) {

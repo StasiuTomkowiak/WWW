@@ -49,7 +49,7 @@ header h1 {
   display: inline-block;
   transition: all 0.4s ease-in-out;
 }
-.list .menu a:hover, .list .menu a:active {
+.list .menu a:hover {
   transform: scale(1.4);
   color: var(--color-secondary);
 }
@@ -85,6 +85,7 @@ footer {
           clip-path: polygon(0 0, 0% 100%, 52% 88%);
 }
 .main .left_content .image {
+  width: 100%;
   max-width: 100%;
   display: flex;
   justify-content: center;
@@ -96,21 +97,31 @@ footer {
   border-radius: var(--br-sm-2);
   transition: all 0.4s ease-in-out;
 }
-.main .left_content .image img:hover, .main .left_content .image img:active {
+.main .left_content .image img:hover {
   transform: scale(1.05);
 }
 .main .right_content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-right: 18rem;
+  justify-content: center; /* Wyrównanie w pionie */
+  align-items: center; /* Wyrównanie w poziomie */
+  padding-right: 10rem;
 }
 .main .right_content .name {
+  width: 80%;
+  min-width: 250px;
   font-size: 3rem;
+  text-align: center;
 }
 .main .right_content p {
-  margin: 1.5rem 0;
+  width: 70%;
+  max-width: 400px;
+  min-width: 250px;
+  text-align: justify;
+  padding: 1.5rem 1.5rem;
   line-height: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 810px) {
