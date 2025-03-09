@@ -44,12 +44,24 @@ header h1 {
             display: inline-block; 
             transition: all .4s ease-in-out;
             &:hover {
-                transform: scale(1.4); 
+                transform: scale(1.2); 
                 color: var(--color-secondary);
                 
             }
         }
     } 
+    .act{
+        a{
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block; 
+            transition: all .4s ease-in-out;
+            transform: scale(1.2); 
+            color: var(--color-secondary);
+                
+        }
+    }
 }
 
 footer {
