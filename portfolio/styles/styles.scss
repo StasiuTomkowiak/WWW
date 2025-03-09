@@ -115,13 +115,7 @@ footer {
         color: var(--color-white);
         text-decoration: none;
         font-weight: bold;
-        display: inline-block; 
-        transition: all  ease;
-        &:active {
-            transform: scale(1.4); 
-            color: var(--color-secondary);
-            
-        }
+        
     }
     .main{
         grid-template-columns: 1fr; 
