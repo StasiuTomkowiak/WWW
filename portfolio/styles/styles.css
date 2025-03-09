@@ -42,12 +42,15 @@ header h1 {
   display: inline;
   margin: 0 15px;
 }
-.list a {
+.list .menu a {
   color: var(--color-white);
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  transition: all 0.4s ease-in-out;
 }
-.list a:hover {
+.list .menu a:hover, .list .menu a:active {
+  transform: scale(1.4);
   color: var(--color-secondary);
 }
 
@@ -71,7 +74,6 @@ footer {
   position: relative;
 }
 .main .left_content .h-shape {
-  transition: all 0.4s ease-in-out;
   width: 100%;
   height: 100%;
   background-color: var(--color-secondary);
@@ -94,7 +96,7 @@ footer {
   border-radius: var(--br-sm-2);
   transition: all 0.4s ease-in-out;
 }
-.main .left_content .image img:hover {
+.main .left_content .image img:hover, .main .left_content .image img:active {
   transform: scale(1.05);
 }
 .main .right_content {
@@ -104,21 +106,27 @@ footer {
   padding-right: 18rem;
 }
 .main .right_content .name {
-  transition: all 0.4s ease-in-out;
   font-size: 3rem;
 }
-.main .right_content .name span {
-  color: var(--color-secondary);
-}
 .main .right_content p {
-  transition: all 0.4s ease-in-out;
   margin: 1.5rem 0;
   line-height: 2rem;
 }
 
 @media (max-width: 810px) {
+  a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all ease;
+  }
+  a:active {
+    transform: scale(1.4);
+    color: var(--color-secondary);
+  }
   .main {
-    grid-template-columns: 1fr; /* Jedna kolumna na mniejszych ekranach */
+    grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,15 +138,10 @@ footer {
     padding-right: 0;
   }
   .main .right_content .name {
-    transition: all 0.4s ease-in-out;
     font-size: 3rem;
   }
-  .main .right_content .name span {
-    color: var(--color-secondary);
-  }
   .main .right_content p {
-    transition: all 0.4s ease-in-out;
-    margin: 1.5rem 0;
+    margin: 1.5rem 1.5rem; /*  */
     line-height: 2rem;
   }
   .main .left_content {
@@ -155,11 +158,10 @@ footer {
     border-radius: var(--br-sm-2);
     transition: all 0.4s ease-in-out;
   }
-  .main .left_content .image img:hover {
+  .main .left_content .image img:hover, .main .left_content .image img:active {
     transform: scale(1.05);
   }
   .main .left_content .h-shape {
-    transition: all 0.4s ease-in-out;
     width: 60%;
     height: 100%;
     background-color: var(--color-secondary);

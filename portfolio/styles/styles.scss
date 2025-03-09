@@ -33,19 +33,24 @@ header h1 {
 .list{
     list-style: none;
     padding: 0;
-
+    
     .menu{
         display: inline;
         margin: 0 15px;
-    }
-    a{
-        color: var(--color-white);
-        text-decoration: none;
-        font-weight: bold;
-        &:hover{
-            color: var(--color-secondary);
+        a{
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block; 
+            transition: all .4s ease-in-out;
+            &:hover,&:active {
+                transform: scale(1.4); 
+                color: var(--color-secondary);
+                
+            }
         }
     }
+    
 }
 
 footer {
@@ -66,7 +71,6 @@ footer {
         align-items: center;
         position: relative;
         .h-shape {
-            transition: all .4s ease-in-out;
             width: 100%;
             height: 100%;
             background-color: var(--color-secondary);
@@ -86,7 +90,7 @@ footer {
                 height: auto; 
                 border-radius: var(--br-sm-2);
                 transition: all .4s ease-in-out;
-                &:hover{ 
+                &:hover,&:active { 
                     transform: scale(1.05); 
                 }
             }
@@ -98,20 +102,29 @@ footer {
             justify-content: center;
             padding-right: 18rem;
             .name {
-                transition: all .4s ease-in-out;
                 font-size: 3rem;
-                span { color: var(--color-secondary); }
             }
             p {
-                transition: all .4s ease-in-out;
                 margin: 1.5rem 0;
                 line-height: 2rem;
             }
     }
 }
 @media (max-width: 810px) {
+    a{
+        color: var(--color-white);
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block; 
+        transition: all  ease;
+        &:active {
+            transform: scale(1.4); 
+            color: var(--color-secondary);
+            
+        }
+    }
     .main{
-        grid-template-columns: 1fr; /* Jedna kolumna na mniejszych ekranach */
+        grid-template-columns: 1fr; 
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -122,14 +135,12 @@ footer {
             justify-content: center;
             padding-right: 0;
             .name {
-                transition: all .4s ease-in-out;
                 font-size: 3rem;
-                span { color: var(--color-secondary); }
             }
             p {
-                transition: all .4s ease-in-out;
                 margin: 1.5rem 1.5rem;/*  */
                 line-height: 2rem;
+                
             }
         }
         .left_content{
@@ -143,13 +154,12 @@ footer {
                     height: auto; 
                     border-radius: var(--br-sm-2);
                     transition: all .4s ease-in-out;
-                    &:hover{ 
+                    &:hover,&:active { 
                         transform: scale(1.05); 
                     }
                 }
             }
             .h-shape {
-                transition: all .4s ease-in-out;
                 width: 60%;
                 height: 100%;
                 background-color: var(--color-secondary);
