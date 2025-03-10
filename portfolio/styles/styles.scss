@@ -163,7 +163,7 @@ footer {
         .projects_container { 
             display: grid;
             grid-template-columns: repeat(3, auto); 
-            grid-template-rows: repeat(2, auto); 
+            grid-template-rows: repeat(2, 1fr); 
             grid-auto-flow: column; 
             gap: 20px;
             justify-content: center;
@@ -176,7 +176,8 @@ footer {
                 text-align: center;
                 display: flex;               
                 flex-direction: column;      
-                justify-content: center;     
+                justify-content: space-between;  
+                justify-content: center; 
                 align-items: center;         
                          
                 transition: all .4s ease-in-out;
@@ -218,8 +219,9 @@ footer {
                     }
                 }
                 p{
-                    height:49%;
+                    height: 65%;
                 }
+
                 .title{
                     height: 10%;
                     font-size: 1.5rem;
