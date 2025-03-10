@@ -8,11 +8,16 @@
 :root {
     --color-primary: #1c1c1c ;
     --color-secondary: #5F85DB;
-    --color-white: #FFFFFF;
+    --color-white: #fff8f2;
     --color-black: #000;
     --color-grey-0: #1f1f1f;
+    --color-grey-1: #131313;
+
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+    --text-shadow-1: 0 0 30px #5f84dbc5;
+    --text-shadow-2: 2px 2px 15px #fff8f275;
+
 }
 
 body {
@@ -23,8 +28,11 @@ body {
 }
 
 header{
+    top: 0;
+    position: sticky;
     background-color: var(--color-grey-0);
     padding: 20px;
+    z-index: 10;
 }
 
 header h1 {
@@ -147,7 +155,7 @@ footer {
     .projects {
         text-align: center;
         padding: 2rem;
-        width: 70%;
+        width: 80%;
         display: flex;
         align-items: center;      
         flex-direction: column;   
@@ -175,32 +183,51 @@ footer {
                     transform: scale(1.05); 
                 }
                 .progress_bar {
-                    width: 100%;
+                    width: 90%;
                     background: var(--color-white);
                     border-radius: var(--br-sm-2);
-                    margin: 10px 0;
+    
                     position: relative;
                     .progress {
                         background: var(--color-secondary);
-                        height: 25px;
+                        height: 8px;
                         line-height: 25px;
-                        color: var(--color-white);
                         text-align: center;
                         border-radius: var(--br-sm-2);
                     }   
                 }
                 .btn {
-                    display: inline-block;
-                    padding: 10px 15px;
-                    margin-top: 10px;
-                    color: var(--color-white);
+                    margin-top: 20px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 70px; /* Ustawienie szerokości i wysokości dla okrągłego kształtu */
+                    height: 40px;
                     background: var(--color-secondary);
+                    color: var(--color-white);
                     text-decoration: none;
-                    border-radius: var(--br-sm-2);
-                    transition: transform 0.4s ease-in-out;
+                    border-radius: 12px; /* Sprawia, że przycisk jest okrągły */
+                    transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
+                    font-size: 1.5rem;
                     &:hover { 
-                        transform: scale(1.05);
+                        background: var(--color-grey-1); /* Zmiana koloru tła na czarny po najechaniu */
+                        transform: scale(1.1); 
                     }
+                }
+                .title{
+                    font-size: 1.5rem;
+                    color: var(--color-white);
+                    text-shadow: var(--text-shadow-2);
+                    font-weight: bold;
+                    line-height: 1.1;
+                }
+                .procent{
+                    font-size: 1.5rem;
+                    color: var(--color-secondary);
+                    text-shadow: var(--text-shadow-1);
+                    align-self: flex-end; 
+                    font-weight: bold;
+                    line-height: 1.2;
                 }
             }
             .image_project {
