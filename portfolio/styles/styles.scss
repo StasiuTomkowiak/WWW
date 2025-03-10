@@ -160,14 +160,15 @@ footer {
         align-items: center;      
         flex-direction: column;   
         min-width: 810px;
-        
         .projects_container { 
             display: grid;
             grid-template-columns: repeat(3, auto); 
             grid-template-rows: repeat(2, auto); 
+            grid-auto-flow: column; 
             gap: 20px;
             justify-content: center;
             .project {
+                height: 100%;
                 background: var(--color-grey-0);
                 padding: 20px;
                 border-radius: var(--br-sm-2);
@@ -177,17 +178,19 @@ footer {
                 flex-direction: column;      
                 justify-content: center;     
                 align-items: center;         
-                height: 100%;            
+                         
                 transition: all .4s ease-in-out;
                 &:hover { 
                     transform: scale(1.05); 
                 }
                 .progress_bar {
+                    margin-top: 5px;
+                    height:8px;
                     width: 90%;
                     background: var(--color-white);
                     border-radius: var(--br-sm-2);
-    
                     position: relative;
+                    
                     .progress {
                         background: var(--color-secondary);
                         height: 8px;
@@ -197,7 +200,7 @@ footer {
                     }   
                 }
                 .btn {
-                    margin-top: 20px;
+                    margin-top: 8%;
                     display: inline-flex;
                     justify-content: center;
                     align-items: center;
@@ -214,37 +217,63 @@ footer {
                         transform: scale(1.1); 
                     }
                 }
+                p{
+                    height:49%;
+                }
                 .title{
+                    height: 10%;
                     font-size: 1.5rem;
                     color: var(--color-white);
                     text-shadow: var(--text-shadow-2);
                     font-weight: bold;
                     line-height: 1.1;
                 }
-                .procent{
-                    font-size: 1.5rem;
-                    color: var(--color-secondary);
-                    text-shadow: var(--text-shadow-1);
-                    align-self: flex-end; 
-                    font-weight: bold;
-                    line-height: 1.2;
+                .bar_title{
+                    width:90%;
+                    display: flex;
+                    align-items: center;     
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .done{
+                        font-size: 1.5rem;
+                        color: var(--color-secondary);
+                        text-shadow: var(--text-shadow-1);
+                        font-weight: bold;
+                        line-height: 1.3;
+
+                        
+                    }
+                    .procent{
+                        font-size: 1.5rem;
+                        color: var(--color-secondary);
+                        text-shadow: var(--text-shadow-1);
+                        font-weight: bold;
+                        line-height: 1.3;
+        
+                    }
                 }
+                
             }
             .image_project {
                 background: var(--color-grey-0);
                 border-radius: var(--br-sm-2);
                 box-shadow: var(--box-shadow-1);
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 transition: all .4s ease-in-out;
                 &:hover { 
                     transform: scale(1.05); 
                 }
                 .image{
-                    width: 100%; /* Szerokość obrazu dostosowana do szerokości kontenera */
+                    width: 100%; 
                     height: 100%;
                     object-fit: cover !important;
                     border-radius: var(--br-sm-2);
-                    margin-bottom: 10px;
+
                     
                 }
             }
@@ -315,19 +344,21 @@ footer {
     } 
     .main_projects{
         max-width: 100% !important;
+        grid-template-columns: 1fr !important;
+
     }
     .projects_container {
         grid-template-columns: 1fr !important;
-        grid-template-rows: auto !important;
+        grid-template-rows: repeat(6, auto) !important; 
+        grid-auto-flow: column; 
         justify-items: center;
     }
-    .projects{
+    .projects{ 
         max-width: 100% !important;
         min-width: 0!important;
         width: 100% !important;
         
     }
-
     .project {
         width: 80% !important; /* Wymuszenie szerokości */
         max-width: 80% !important; /* Nadpisanie max-width */
@@ -349,7 +380,6 @@ footer {
             height: 100%;
             object-fit: cover !important;
             border-radius: var(--br-sm-2);
-            margin-bottom: 10px;
             
         }
     }
