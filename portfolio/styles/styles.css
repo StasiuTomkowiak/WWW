@@ -1,5 +1,3 @@
-@charset "UTF-8";
-/* Main*/
 * {
   margin: 0;
   padding: 0;
@@ -120,8 +118,8 @@ footer {
 .main .right_content {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Wyrównanie w pionie */
-  align-items: center; /* Wyrównanie w poziomie */
+  justify-content: center;
+  align-items: center;
   padding-right: 10rem;
 }
 .main .right_content .name {
@@ -375,7 +373,7 @@ footer {
     font-size: 3rem;
   }
   .main .right_content p {
-    margin: 1.5rem 1.5rem; /*  */
+    margin: 1.5rem 1.5rem;
     line-height: 2rem;
   }
   .main .left_content {
@@ -410,22 +408,22 @@ footer {
     max-width: 100% !important;
     grid-template-columns: 1fr !important;
   }
-  .projects_container {
+  .main_projects .projects {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .main_projects .projects .projects_container {
     grid-template-columns: 1fr !important;
     grid-template-rows: repeat(6, 1fr) !important;
     grid-auto-flow: column;
     justify-items: center;
   }
-  .projects {
-    max-width: 100% !important;
-    min-width: 0 !important;
-    width: 100% !important;
+  .main_projects .projects .projects_container .project {
+    width: 80% !important;
+    max-width: 80% !important;
   }
-  .project {
-    width: 80% !important; /* Wymuszenie szerokości */
-    max-width: 80% !important; /* Nadpisanie max-width */
-  }
-  .image_project {
+  .main_projects .projects .projects_container .image_project {
     width: 80% !important;
     max-width: 80% !important;
     background: var(--color-grey-0);
@@ -434,17 +432,17 @@ footer {
     text-align: center;
     transition: all 0.4s ease-in-out;
   }
-  .image_project:hover {
+  .main_projects .projects .projects_container .image_project:hover {
     transform: scale(1.05);
   }
-  .image_project .image {
-    width: 100%; /* Szerokość obrazu dostosowana do szerokości kontenera */
+  .main_projects .projects .projects_container .image_project .image {
+    width: 100%;
     height: 100%;
     -o-object-fit: cover !important;
        object-fit: cover !important;
     border-radius: var(--br-sm-2);
   }
-  .projects_container_languages {
+  .main_projects .projects .projects_container_languages {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
@@ -453,11 +451,11 @@ footer {
     grid-auto-flow: column;
     justify-items: center;
   }
-  .projects_container_languages .project_laguages {
-    width: 80% !important; /* Wymuszenie szerokości */
-    max-width: 80% !important; /* Nadpisanie max-width */
+  .main_projects .projects .projects_container_languages .project_laguages {
+    width: 80% !important;
+    max-width: 80% !important;
   }
-  aside p {
+  .main_projects .projects aside p {
     margin: 1.5rem 1.5rem 4.5rem 1.5rem;
     margin-bottom: 4rem;
     line-height: 2rem;
