@@ -136,7 +136,7 @@ footer {
             width: 70%;
             max-width: 400px;
             min-width: 250px;
-            text-align: justify; 
+            text-align: center; 
             padding: 1.5rem 1.5rem;
             line-height: 2rem;
             display: flex;
@@ -147,7 +147,8 @@ footer {
 
 //Projects
 .main_projects{
-    min-height: 120vh;
+    height: auto;
+    padding-bottom: 2rem;
     width: 100%;
     display: flex;
     align-items: center;     
@@ -205,16 +206,16 @@ footer {
                     display: inline-flex;
                     justify-content: center;
                     align-items: center;
-                    width: 70px; /* Ustawienie szerokości i wysokości dla okrągłego kształtu */
+                    width: 70px;
                     height: 40px;
                     background: var(--color-secondary);
                     color: var(--color-white);
                     text-decoration: none;
-                    border-radius: 12px; /* Sprawia, że przycisk jest okrągły */
+                    border-radius: 12px; 
                     transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
                     font-size: 1.5rem;
                     &:hover { 
-                        background: var(--color-grey-1); /* Zmiana koloru tła na czarny po najechaniu */
+                        background: var(--color-grey-1); 
                         transform: scale(1.1); 
                     }
                 }
@@ -280,9 +281,82 @@ footer {
                 }
             }
         }
-    }
+        .projects_container_languages { 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            grid-template-rows: repeat(2, 1fr); 
+            gap: 20px;
+            justify-content: center;
+            .project_laguages {
+                height: 100%;
+                background: var(--color-grey-0);
+                padding: 20px;
+                border-radius: var(--br-sm-2);
+                box-shadow: var(--box-shadow-1);
+                text-align: center;
+                display: flex;               
+                flex-direction: column;      
+                justify-content: space-between;  
+                justify-content: center; 
+                align-items: center;         
+                         
+                transition: all .4s ease-in-out;
+                &:hover { 
+                    transform: scale(1.05); 
+                }
+                .progress_bar {
+                    margin-top: 5px;
+                    height:8px;
+                    width: 90%;
+                    background: var(--color-white);
+                    border-radius: var(--br-sm-2);
+                    position: relative;
+                    
+                    .progress {
+                        background: var(--color-secondary);
+                        height: 8px;
+                        line-height: 25px;
+                        text-align: center;
+                        border-radius: var(--br-sm-2);
+                    }   
+                }
+                .bar_title{
+                    width:90%;
+                    display: flex;
+                    align-items: center;     
+                    flex-direction: row;
+                    justify-content: space-between;
+    
+                    .done{
+                        font-size: 1.5rem;
+                        color: var(--color-secondary);
+                        text-shadow: var(--text-shadow-1);
+                        font-weight: bold;
+                        line-height: 1.3;
+                    }
+                    .procent{
+                        font-size: 1.5rem;
+                        color: var(--color-secondary);
+                        text-shadow: var(--text-shadow-1);
+                        font-weight: bold;
+                        line-height: 1.3;
+        
+                    }
+                }
 
+            }
+                
+            }
+    }
+    .name {
+        width: 100%;
+        min-width: 250px;
+        font-size: 3rem;
+        text-align: center;
+    }
+    
 }
+
 
 //Smartphones
 @media (max-width: 810px) {
