@@ -382,7 +382,6 @@ footer {
                 width: 100%;
                 margin: 3rem auto;
                 background-color: var(--color-grey-0);
-                padding: 2rem;
                 border-radius: var(--br-sm-2);
                 box-shadow: var(--box-shadow-1);
                 text-align: center;
@@ -392,6 +391,7 @@ footer {
                     transform: scale(1.05);
                 }
             .name {
+
                 font-size: 3rem;
                 color: var(--color-white);
                 font-weight: bold;
@@ -400,7 +400,8 @@ footer {
             }
            
             .code {
-                height: 90%;
+                margin: 2rem;
+                height: 950px;
                 background-color: var(--color-primary);
                 color: var(--color-white);
                 border-radius: var(--br-sm-2);
@@ -537,22 +538,17 @@ footer {
             width: 100% !important;
         
             .codes{
+                max-width: 100% !important;
+                min-width: 0 !important;
+                width: 100% !important;
                 grid-template-columns: 1fr !important;
                 grid-template-rows: repeat(2, 1fr) !important;
-                grid-auto-flow: column;
-                justify-items: center;
                 grid-auto-flow: column;
                 justify-items: center;
                 .algorythm{
                     width: 80% !important;
                     max-width: 80% !important;
-                    
-                    .name{
-    
-                    }
-                    .code{
-    
-                    }
+                    text-align: center;
                 }
             }
         }
