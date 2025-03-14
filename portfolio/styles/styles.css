@@ -128,20 +128,24 @@ footer {
   font-size: 3rem;
   text-align: center;
 }
+.main .right_content .name .blue {
+  color: var(--color-secondary);
+}
 .main .right_content p {
   width: 70%;
-  max-width: 400px;
-  min-width: 250px;
+  max-width: 500px;
+  min-width: 350px;
   text-align: center;
   padding: 1.5rem 1.5rem;
   line-height: 2rem;
-  display: flex;
-  justify-content: center;
+}
+.main .right_content p .blue {
+  color: var(--color-secondary);
 }
 
 .main_projects {
   height: auto;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -346,6 +350,58 @@ footer {
   font-size: 3rem;
   text-align: center;
 }
+.main_projects .algorythms {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 810px;
+}
+.main_projects .algorythms .codes {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-auto-flow: column;
+  gap: 20px;
+  justify-content: center;
+}
+.main_projects .algorythms .codes .algorythm {
+  width: 100%;
+  margin: 3rem auto;
+  background-color: var(--color-grey-0);
+  padding: 2rem;
+  border-radius: var(--br-sm-2);
+  box-shadow: var(--box-shadow-1);
+  text-align: center;
+  color: var(--color-white);
+  transition: all 0.4s ease-in-out;
+}
+.main_projects .algorythms .codes .algorythm:hover {
+  transform: scale(1.05);
+}
+.main_projects .algorythms .codes .algorythm .name {
+  font-size: 3rem;
+  color: var(--color-white);
+  font-weight: bold;
+  text-shadow: var(--text-shadow-2);
+  margin-bottom: 1.5rem;
+}
+.main_projects .algorythms .codes .algorythm .code {
+  height: 90%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--br-sm-2);
+  font-size: 0.75rem;
+  display: block;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left;
+  box-shadow: var(--box-shadow-1);
+}
 
 @media (max-width: 810px) {
   header h1 {
@@ -459,5 +515,22 @@ footer {
     margin: 1.5rem 1.5rem 4.5rem 1.5rem;
     margin-bottom: 4rem;
     line-height: 2rem;
+  }
+  .main_projects .algorythms {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .main_projects .algorythms .codes {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    grid-auto-flow: column;
+    justify-items: center;
+    grid-auto-flow: column;
+    justify-items: center;
+  }
+  .main_projects .algorythms .codes .algorythm {
+    width: 80% !important;
+    max-width: 80% !important;
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -1,59 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zainteresowania</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-        <header class="header">
-            <h1>Zainteresowania</h1>
-            <nav class="navigation">
-                <ul class="list">
-                    <li class="menu"><a href="main.html">O mnie</a></li>
-                    <li class="menu"><a href="projects.html">Projekty</a></li>
-                    <li class="menu act"><a href="interests.html">Zainteresowania</a></li>
-                    <li class="menu"><a href="contact.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="main_projects"> 
-            <section class="projects">
-                <section class="projects_container">
-                    <!-- Projekt 1 -->
-                    <article class="project">
-                        <h3 class="title">Kompilator</h3>
-                        <p>Kompilator prostego języka imperatywnego na język assembly.</p>
-                    </article>
-                    <article class="image_project">
-                        <img src="images/projects2.jpg" alt="Projekt 1" class="image">
-                    </article>
+    <header class="header">
+        <h1>Zainteresowania</h1>
+        <nav class="navigation">
+            <ul class="list">
+                <li class="menu"><a href="main.html">O mnie</a></li>
+                <li class="menu"><a href="projects.html">Projekty</a></li>
+                <li class="menu act"><a href="interests.html">Zainteresowania</a></li>
+                <li class="menu"><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main_projects">
+        <section class="projects">
+            <section class="projects_container">
+                <!-- Projekt 1 -->
+                <article class="project">
+                    <h3 class="title">Kompilator</h3>
+                    <p>Kompilator prostego języka imperatywnego na język assembly.</p>
+                </article>
+                <article class="image_project">
+                    <img src="images/projects2.jpg" alt="Projekt 1" class="image">
+                </article>
+
+                <!-- Projekt 2 -->
+                <article class="project">
+                    <h3 class="title">Gra GO</h3>
+                    <p>Implementacja w języku Java chińskiej gry GO z interfejsem graficznym.</p>
+                </article>
+                <article class="image_project">
+                    <img src="images/go.jpg" alt="Projekt 2" class="image">
+                </article>
+
+                <!-- Projekt 3 -->
+                <article class="project">
+                    <h3 class="title">Zebra AI</h3>
+                    <p>Sterowanie sygnalizacją świetlną dla pieszych i dostosowywanie czasu zielonego światła do potrzeb
+                        osoby.
+                        Decyzje podejmowane na podstawie niepełnosprawności i wieku.</p>
+                </article>
+                <article class="image_project">
+                    <img src="images/crosswalk.jpg" alt="Projekt 3" class="image">
+                </article>
+
+            </section>
+        </section>
+        <section class="algorythms">
+            <section class="codes">
+                <section class="algorythm">
+                    <h2 class="name">Algorytm BFS</h2>
+                    <code class="code">
+# Function to find BFS of Graph from given source s
+def bfsOfGraph(adj, s):
     
-                    <!-- Projekt 2 -->
-                    <article class="project">
-                        <h3 class="title">Gra GO</h3>
-                        <p>Implementacja w języku Java chińskiej gry GO z interfejsem graficznym.</p>
-                    </article>
-                    <article class="image_project">
-                        <img src="images/go.jpg" alt="Projekt 2" class="image">
-                    </article>
+    # get number of vertices
+    V = len(adj)
+    
+    # create an array to store the traversal
+    res = []
+    
+    # Create a queue for BFS
+    from collections import deque
+    q = deque()
+    
+    # Initially mark all the vertices as not visited
+    visited = [False] * V
+    
+    # Mark source node as visited and enqueue it
+    visited[s] = True
+    q.append(s)
+    
+    # Iterate over the queue
+    while q:
         
-                    <!-- Projekt 3 -->
-                    <article class="project">
-                        <h3 class="title">Zebra AI</h3>
-                        <p>Sterowanie sygnalizacją świetlną dla pieszych i dostosowywanie czasu zielonego światła do potrzeb osoby.
-                             Decyzje podejmowane na podstawie niepełnosprawności i wieku.</p>
-                    </article>
-                    <article class="image_project">
-                        <img src="images/crosswalk.jpg" alt="Projekt 3" class="image">
-                    </article>
-                    
+        # Dequeue a vertex from queue and store it
+        curr = q.popleft()
+        res.append(curr)
+        
+        # Get all adjacent vertices of the dequeued 
+        # vertex curr If an adjacent has not been 
+        # visited, mark it visited and enqueue it
+        for x in adj[curr]:
+            if not visited[x]:
+                visited[x] = True
+                q.append(x)
+                
+    return res
+if __name__ == "__main__":
+    
+    # create the adjacency list
+    # [ [2, 3, 1], [0], [0, 4], [0], [2] ]
+    adj = [ [2, 3, 1], [0], [0, 4], [0], [2] ]
+    src = 0
+    ans = bfsOfGraph(adj, src)
+    for i in ans:
+        print(i, end=" ")                                    
+                    </code>
+                </section>
+                <section class="algorythm">
+                    <h2 class="name">Algorytm DFS</h2>
+                    <code class="code">
+    def dfs_rec(adj, visited, s):
+    # Mark the current vertex as visited
+    visited[s] = True
+
+    # Print the current vertex
+    print(s, end=" ")
+
+    # Recursively visit all adjacent vertices
+    # that are not visited yet
+    for i in adj[s]:
+        if not visited[i]:
+            dfs_rec(adj, visited, i)
+
+
+def dfs(adj, s):
+    visited = [False] * len(adj)
+    # Call the recursive DFS function
+    dfs_rec(adj, visited, s)
+
+def add_edge(adj, s, t):
+    # Add edge from vertex s to t
+    adj[s].append(t)
+    # Due to undirected Graph
+    adj[t].append(s)
+    
+if __name__ == "__main__":
+    V = 5
+
+    # Create an adjacency list for the graph
+    adj = [[] for _ in range(V)]
+
+    # Define the edges of the graph
+    edges = [[1, 2], [1, 0], [2, 0], [2, 3], [2, 4]]
+
+    # Populate the adjacency list with edges
+    for e in edges:
+        add_edge(adj, e[0], e[1])
+
+    source = 1
+    print("DFS from source:", source)
+    dfs(adj, source)
+                                            
+                    </code>
                 </section>
             </section>
-        </main>
-        <footer>
-            <p>&copy; 2025 Stanisław Tomkowiak</p>
-        </footer>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Stanisław Tomkowiak</p>
+    </footer>
 </body>
+
 </html>
