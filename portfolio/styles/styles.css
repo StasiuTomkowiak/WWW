@@ -409,6 +409,94 @@ footer {
   text-align: left;
   box-shadow: var(--box-shadow-1);
 }
+.main_projects .contact_section {
+  width: 100%;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-color: var(--color-primary);
+}
+.main_projects .contact_section .contact_details {
+  margin-bottom: 2rem;
+}
+.main_projects .contact_section .contact_details .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 20px;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--br-sm-2);
+  transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
+  font-size: 1rem;
+}
+.main_projects .contact_section .contact_details .btn:hover {
+  background: var(--color-grey-1);
+  transform: scale(1.1);
+}
+.main_projects .contact_section .contact_form {
+  background-color: var(--color-grey-0);
+  padding: 2rem;
+  border-radius: var(--br-sm-2);
+  box-shadow: var(--box-shadow-1);
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+}
+.main_projects .contact_section .contact_form .name {
+  font-size: 3rem;
+  color: var(--color-white);
+  font-weight: bold;
+  text-shadow: var(--text-shadow-2);
+  margin-bottom: 1.5rem;
+}
+.main_projects .contact_section .contact_form .form_group {
+  margin-bottom: 1.5rem;
+}
+.main_projects .contact_section .contact_form .form_group label {
+  font-size: 1.2rem;
+  color: var(--color-white);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.main_projects .contact_section .contact_form .form_group input,
+.main_projects .contact_section .contact_form .form_group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: var(--br-sm-2);
+  border: 1px solid var(--color-grey-1);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.main_projects .contact_section .contact_form .form_group textarea {
+  resize: vertical;
+}
+.main_projects .contact_section .contact_form .btn_area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.main_projects .contact_section .contact_form .btn_area .btn {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  padding: 0.8rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: var(--br-sm-2);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.main_projects .contact_section .contact_form .btn_area .btn:hover {
+  background: var(--color-grey-1);
+  transform: scale(1.1);
+}
 
 @media (max-width: 810px) {
   header h1 {

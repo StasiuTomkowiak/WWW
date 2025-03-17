@@ -360,8 +360,7 @@ footer {
         font-size: 3rem;
         text-align: center;
     }
-    .algorythms{
-        
+    .algorythms {
         text-align: center;
         padding: 2rem;
         width: 100%;
@@ -370,14 +369,13 @@ footer {
         flex-direction: column;
         min-width: 810px;
         .name {
-
             font-size: 3rem;
             color: var(--color-white);
             font-weight: bold;
             text-shadow: var(--text-shadow-2);
             margin-bottom: 1.5rem;
         }
-        .codes{
+        .codes {
             width: 80%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -385,7 +383,7 @@ footer {
             grid-auto-flow: column;
             gap: 20px;
             justify-content: center;
-            .algorythm{
+            .algorythm {
                 width: 100%;
                 margin: 3rem auto;
                 background-color: var(--color-grey-0);
@@ -397,31 +395,123 @@ footer {
                 &:hover {
                     transform: scale(1.05);
                 }
-            .name {
+                .name {
+                    font-size: 3rem;
+                    color: var(--color-white);
+                    font-weight: bold;
+                    text-shadow: var(--text-shadow-2);
+                    margin-bottom: 1.5rem;
+                }
 
+                .code {
+                    margin: 2rem;
+                    height: 950px;
+                    background-color: var(--color-primary);
+                    color: var(--color-white);
+                    border-radius: var(--br-sm-2);
+                    font-size: 0.75rem;
+                    display: block;
+                    overflow-x: auto;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    text-align: left;
+                    box-shadow: var(--box-shadow-1);
+                }
+            }
+        }
+    }
+    .contact_section {
+        width: 100%;
+        text-align: center;
+        padding: 3rem 1.5rem;
+        background-color: var(--color-primary);
+        .contact_details {
+            margin-bottom: 2rem;
+            .btn {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 20px;
+                background: var(--color-secondary);
+                color: var(--color-white);
+                text-decoration: none;
+                border-radius: var(--br-sm-2);
+                transition:
+                    background 0.4s ease-in-out,
+                    transform 0.3s ease-in-out;
+                font-size: 1rem;
+                &:hover {
+                    background: var(--color-grey-1);
+                    transform: scale(1.1);
+                }
+        }
+    }
+        .contact_form {
+            background-color: var(--color-grey-0);
+            padding: 2rem;
+            border-radius: var(--br-sm-2);
+            box-shadow: var(--box-shadow-1);
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+
+            .name {
                 font-size: 3rem;
                 color: var(--color-white);
                 font-weight: bold;
                 text-shadow: var(--text-shadow-2);
                 margin-bottom: 1.5rem;
             }
-           
-            .code {
-                margin: 2rem;
-                height: 950px;
-                background-color: var(--color-primary);
-                color: var(--color-white);
-                border-radius: var(--br-sm-2);
-                font-size: 0.75rem;
-                display: block;
-                overflow-x: auto;
-                white-space: pre-wrap;
-                word-wrap: break-word;
-                text-align: left;
-                box-shadow: var(--box-shadow-1);
+
+            .form_group {
+                margin-bottom: 1.5rem;
+                label {
+                    font-size: 1.2rem;
+                    color: var(--color-white);
+                    display: block;
+                    margin-bottom: 0.5rem;
+                }
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 0.8rem;
+                    font-size: 1rem;
+                    border-radius: var(--br-sm-2);
+                    border: 1px solid var(--color-grey-1);
+                    background-color: var(--color-primary);
+                    color: var(--color-white);
+                }
+                textarea {
+                    resize: vertical;
+                }
             }
-        }}
-       
+            .btn_area{
+                width:100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .btn {
+                    background: var(--color-secondary);
+                    color: var(--color-white);
+                    padding: 0.8rem 1.5rem;
+                    font-size: 1.5rem;
+                    border-radius: var(--br-sm-2);
+                    text-decoration: none;
+                    display: inline-block;
+                    transition: all 0.3s ease-in-out;
+                    text-align: center;
+                    border: none;
+                    outline: none;
+                    &:hover {
+                        background: var(--color-grey-1);
+                        transform: scale(1.1);
+                    }
+                }
+            }
+           
+        }
     }
 }
 
@@ -539,12 +629,12 @@ footer {
                 line-height: 2rem;
             }
         }
-        .algorythms{
+        .algorythms {
             max-width: 100% !important;
             min-width: 0 !important;
             width: 100% !important;
-        
-            .codes{
+
+            .codes {
                 max-width: 100% !important;
                 min-width: 0 !important;
                 width: 100% !important;
@@ -552,7 +642,7 @@ footer {
                 grid-template-rows: repeat(2, 1fr) !important;
                 grid-auto-flow: column;
                 justify-items: center;
-                .algorythm{
+                .algorythm {
                     width: 80% !important;
                     max-width: 80% !important;
                     text-align: center;
@@ -560,5 +650,4 @@ footer {
             }
         }
     }
-  
 }
