@@ -359,6 +359,13 @@ footer {
   flex-direction: column;
   min-width: 810px;
 }
+.main_projects .algorythms .name {
+  font-size: 3rem;
+  color: var(--color-white);
+  font-weight: bold;
+  text-shadow: var(--text-shadow-2);
+  margin-bottom: 1.5rem;
+}
 .main_projects .algorythms .codes {
   width: 80%;
   display: grid;

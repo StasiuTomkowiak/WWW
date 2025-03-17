@@ -16,7 +16,7 @@
                 <li class="menu"><a href="main.html">O mnie</a></li>
                 <li class="menu"><a href="projects.html">Projekty</a></li>
                 <li class="menu act"><a href="interests.html">Zainteresowania</a></li>
-                <li class="menu"><a href="contact.html">Kontakt</a></li>
+
             </ul>
         </nav>
     </header>
@@ -28,18 +28,18 @@
                     <h3 class="title">Kompilator</h3>
                     <p>Kompilator prostego języka imperatywnego na język assembly.</p>
                 </article>
-                <article class="image_project">
+                <div class="image_project">
                     <img src="images/projects2.jpg" alt="Projekt 1" class="image">
-                </article>
+                </div>
 
                 <!-- Projekt 2 -->
                 <article class="project">
                     <h3 class="title">Gra GO</h3>
                     <p>Implementacja w języku Java chińskiej gry GO z interfejsem graficznym.</p>
                 </article>
-                <article class="image_project">
+                <div class="image_project">
                     <img src="images/go.jpg" alt="Projekt 2" class="image">
-                </article>
+                </div>
 
                 <!-- Projekt 3 -->
                 <article class="project">
@@ -48,13 +48,15 @@
                         osoby.
                         Decyzje podejmowane na podstawie niepełnosprawności i wieku.</p>
                 </article>
-                <article class="image_project">
+                <div class="image_project">
                     <img src="images/crosswalk.jpg" alt="Projekt 3" class="image">
-                </article>
+                </div>
 
             </section>
         </section>
         <section class="algorythms">
+            <h2 class="name">Algorytmy</h2>
+            
             <section class="codes">
                 <section class="algorythm">
                     <h2 class="name">Algorytm BFS</h2>
@@ -103,8 +105,7 @@ if __name__ == "__main__":
     src = 0
     ans = bfsOfGraph(adj, src)
     for i in ans:
-        print(i, end=" ")                                    
-                    </code>
+        print(i, end=" ")</code>
                 </section>
                 <section class="algorythm">
                     <h2 class="name">Algorytm DFS</h2>
