@@ -69,13 +69,23 @@ header h1 {
 
 footer {
   background-color: var(--color-grey-0);
-  text-align: center;
   padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-between; /* Rozmieszczenie elementów na skrajnych końcach */
+  align-items: center; /* Wyrównanie elementów w pionie */
 }
 
+footer .center {
+  flex: 1;
+  text-align: center; 
+}
+
+footer .css {
+  margin: 0;
+}
 .main {
   height: auto;
   padding-bottom: 2rem;
@@ -96,8 +106,7 @@ footer {
   left: 0;
   top: 0;
   z-index: -1;
-  -webkit-clip-path: polygon(0 0, 0% 100%, 52% 88%);
-          clip-path: polygon(0 0, 0% 100%, 52% 88%);
+  clip-path: polygon(0 0, 0% 100%, 52% 88%);
 }
 .main .left_content .image {
   width: 100%;
@@ -267,8 +276,7 @@ footer {
 .main_projects .projects .projects_container .image_project .image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover !important;
-     object-fit: cover !important;
+  object-fit: cover !important;
   border-radius: var(--br-sm-2);
 }
 .main_projects .projects .projects_container_languages {
@@ -415,6 +423,13 @@ footer {
   padding: 3rem 1.5rem;
   background-color: var(--color-primary);
 }
+.main_projects .contact_section .name {
+  font-size: 3rem;
+  color: var(--color-white);
+  font-weight: bold;
+  text-shadow: var(--text-shadow-2);
+  margin-bottom: 1.5rem;
+}
 .main_projects .contact_section .contact_details {
   margin-bottom: 2rem;
 }
@@ -463,11 +478,12 @@ footer {
 }
 .main_projects .contact_section .contact_form .form_group input,
 .main_projects .contact_section .contact_form .form_group textarea {
+  border: none;
+  outline: none;
   width: 100%;
   padding: 0.8rem;
   font-size: 1rem;
   border-radius: var(--br-sm-2);
-  border: 1px solid var(--color-grey-1);
   background-color: var(--color-primary);
   color: var(--color-white);
 }
@@ -552,8 +568,7 @@ footer {
     left: 0;
     top: 0;
     z-index: -1;
-    -webkit-clip-path: polygon(0 0, 0% 100%, 82% 78%);
-            clip-path: polygon(0 0, 0% 100%, 82% 78%);
+    clip-path: polygon(0 0, 0% 100%, 82% 78%);
   }
   .main_projects {
     max-width: 100% !important;
@@ -589,8 +604,7 @@ footer {
   .main_projects .projects .projects_container .image_project .image {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover !important;
-       object-fit: cover !important;
+    object-fit: cover !important;
     border-radius: var(--br-sm-2);
   }
   .main_projects .projects .projects_container_languages {
