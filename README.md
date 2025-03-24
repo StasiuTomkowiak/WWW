@@ -22,7 +22,7 @@ This is my portfolio, which contains information about me, my projects, interest
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/YourRepository/portfolio.git
+    git clone git@github.com:StasiuTomkowiak/WWW.git
     ```
 2. Open the `main.html` file in your browser.
 
