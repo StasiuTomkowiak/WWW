@@ -184,20 +184,7 @@ footer {
                     transform: scale(1.05);
                 }
                 .progress_bar {
-                    margin-top: 5px;
-                    height: 8px;
-                    width: 90%;
-                    background: var(--color-white);
-                    border-radius: var(--br-sm-2);
-                    position: relative;
-
-                    .progress {
-                        background: var(--color-secondary);
-                        height: 8px;
-                        line-height: 25px;
-                        text-align: center;
-                        border-radius: var(--br-sm-2);
-                    }
+                    @extend .progress-bar-base;
                 }
                 .btn {
                     @include flex(row, center, center);
@@ -222,43 +209,10 @@ footer {
                 }
 
                 .title {
-                    height: auto;
-                    font-size: 3.5rem;
-                    color: var(--color-white);
-                    text-shadow: var(--text-shadow-2);
-                    font-weight: bold;
-                    line-height: 1.1;
-                    
+                    @extend .title-base;
                 }
                 .bar_title {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    grid-auto-flow: column;
-                    place-items: center; 
-                    width: 90%;
-                    text-align: center;
-                    p {
-                        height: auto;
-                    }
-                    .done {
-                        font-size: 2rem;
-                        width: 100%;
-                        text-align: start;
-                        color: var(--color-secondary);
-                        text-shadow: var(--text-shadow-1);
-                        font-weight: bold;
-                        line-height: 1.3;
-                        
-                    }
-                    .procent {
-                        font-size: 3rem;
-                        width: 100%;
-                        text-align: end;
-                        color: var(--color-secondary);
-                        text-shadow: var(--text-shadow-1);
-                        font-weight: bold;
-                        line-height: 2;
-                    }
+                    @extend .bar-title-base;
                 }
             }
             .image_project {
@@ -302,60 +256,13 @@ footer {
                     transform: scale(1.05);
                 }
                 .progress_bar {
-                    margin-top: 5px;
-                    height: 8px;
-                    width: 90%;
-                    background: var(--color-white);
-                    border-radius: var(--br-sm-2);
-                    position: relative;
-
-                    .progress {
-                        background: var(--color-secondary);
-                        height: 8px;
-                        line-height: 25px;
-                        text-align: center;
-                        border-radius: var(--br-sm-2);
-                    }
+                    @extend .progress-bar-base;
                 }
                 .bar_title {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    grid-auto-flow: column;
-                    place-items: center; 
-                    width: 90%;
-                    p {
-                        height: auto;
-                    }
-                    .done {
-                        font-size: 2rem;
-                        width: 100%;
-
-                        text-align: start;
-                        color: var(--color-secondary);
-                        text-shadow: var(--text-shadow-1);
-                        font-weight: bold;
-                        line-height: 1.3;
-                    }
-                    .procent {
-                        font-size: 3rem;
-                        color: var(--color-secondary);
-                        width: 100%;
-                        text-align: end;
-                        text-shadow: var(--text-shadow-1);
-                        font-weight: bold;
-                        line-height: 1.3;
-                    }
+                    @extend .bar-title-base;
                 }
                 .title {
-                    width: 100%;
-                    text-align: start;
-                    height: auto;
-                    font-size: 3rem;
-                    color: var(--color-white);
-                    text-shadow: var(--text-shadow-2);
-                    font-weight: bold;
-                    font-style: italic;
-                    line-height: 1.1;
+                    @extend .title-base;
                 }
             }
         }
@@ -668,4 +575,72 @@ footer {
             }
         }
     }
+}
+
+.bar-title-base {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: column;
+    place-items: center;
+    width: 90%;
+    text-align: center;
+
+    p {
+        height: auto;
+    }
+
+    .done {
+        font-size: 2rem;
+        width: 100%;
+        text-align: start;
+        color: var(--color-secondary);
+        text-shadow: var(--text-shadow-1);
+        font-weight: bold;
+        line-height: 1.3;
+    }
+
+    .procent {
+        font-size: 3rem;
+        color: var(--color-secondary);
+        width: 100%;
+        text-align: end;
+        text-shadow: var(--text-shadow-1);
+        font-weight: bold;
+        line-height: 1.3;
+    }
+}
+
+.progress-bar-base {
+    margin-top: 5px;
+    height: 8px;
+    width: 90%;
+    background: var(--color-white);
+    border-radius: var(--br-sm-2);
+    position: relative;
+
+    .progress {
+        background: var(--color-secondary);
+        height: 8px;
+        line-height: 25px;
+        text-align: center;
+        border-radius: var(--br-sm-2);
+    }
+}
+
+.title-base {
+    font-size: 3rem;
+    color: var(--color-white);
+    text-shadow: var(--text-shadow-2);
+    font-weight: bold;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.name-base {
+    font-size: 3rem;
+    color: var(--color-white);
+    font-weight: bold;
+    text-shadow: var(--text-shadow-2);
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
