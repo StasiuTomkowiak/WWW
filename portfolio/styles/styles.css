@@ -69,34 +69,31 @@ header h1 {
 
 footer {
   background-color: var(--color-grey-0);
+  text-align: center;
   padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between; /* Rozmieszczenie elementów na skrajnych końcach */
-  align-items: center; /* Wyrównanie elementów w pionie */
 }
 
-footer .center {
-  flex: 1;
-  text-align: center; 
-}
-
-footer .css {
-  margin: 0;
-}
 .main {
-  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 2rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
   min-height: 85vh;
+  height: 100%;
 }
 .main .left_content {
   display: flex;
-  align-items: center;
+  flex-direction: center;
+  justify-content: flex-start;
+  align-items: stretch;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 .main .left_content .h-shape {
   width: 100%;
@@ -106,12 +103,14 @@ footer .css {
   left: 0;
   top: 0;
   z-index: -1;
-  clip-path: polygon(0 0, 0% 100%, 52% 88%);
+  -webkit-clip-path: polygon(0 0, 0% 100%, 52% 88%);
+          clip-path: polygon(0 0, 0% 100%, 52% 88%);
 }
 .main .left_content .image {
   width: 100%;
   max-width: 100%;
   display: flex;
+  flex-direction: center;
   justify-content: center;
   align-items: center;
 }
@@ -130,6 +129,7 @@ footer .css {
   justify-content: center;
   align-items: center;
   padding-right: 10rem;
+  width: 100%;
 }
 .main .right_content .name {
   width: 80%;
@@ -153,20 +153,21 @@ footer .css {
 }
 
 .main_projects {
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 4rem;
   width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 .main_projects .projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 2rem;
   width: 80%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   min-width: 810px;
 }
 .main_projects .projects .projects_container {
@@ -178,17 +179,16 @@ footer .css {
   justify-content: center;
 }
 .main_projects .projects .projects_container .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100%;
   background: var(--color-grey-0);
   padding: 20px;
   border-radius: var(--br-sm-2);
   box-shadow: var(--box-shadow-1);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  justify-content: center;
-  align-items: center;
   transition: all 0.4s ease-in-out;
 }
 .main_projects .projects .projects_container .project:hover {
@@ -210,10 +210,11 @@ footer .css {
   border-radius: var(--br-sm-2);
 }
 .main_projects .projects .projects_container .project .btn {
-  margin-top: 8%;
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 8%;
   width: 70px;
   height: 40px;
   background: var(--color-secondary);
@@ -231,43 +232,51 @@ footer .css {
   height: 65%;
 }
 .main_projects .projects .projects_container .project .title {
-  height: 10%;
-  font-size: 1.5rem;
+  height: auto;
+  font-size: 3.5rem;
   color: var(--color-white);
   text-shadow: var(--text-shadow-2);
   font-weight: bold;
   line-height: 1.1;
 }
 .main_projects .projects .projects_container .project .bar_title {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: column;
+  place-items: center;
+  width: 90%;
+  text-align: center;
+}
+.main_projects .projects .projects_container .project .bar_title p {
+  height: auto;
 }
 .main_projects .projects .projects_container .project .bar_title .done {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  width: 100%;
+  text-align: start;
   color: var(--color-secondary);
   text-shadow: var(--text-shadow-1);
   font-weight: bold;
   line-height: 1.3;
 }
 .main_projects .projects .projects_container .project .bar_title .procent {
-  font-size: 1.5rem;
+  font-size: 3rem;
+  width: 100%;
+  text-align: end;
   color: var(--color-secondary);
   text-shadow: var(--text-shadow-1);
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 2;
 }
 .main_projects .projects .projects_container .image_project {
-  background: var(--color-grey-0);
-  border-radius: var(--br-sm-2);
-  box-shadow: var(--box-shadow-1);
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: var(--color-grey-0);
+  border-radius: var(--br-sm-2);
+  box-shadow: var(--box-shadow-1);
+  text-align: center;
   transition: all 0.4s ease-in-out;
 }
 .main_projects .projects .projects_container .image_project:hover {
@@ -276,10 +285,15 @@ footer .css {
 .main_projects .projects .projects_container .image_project .image {
   width: 100%;
   height: 100%;
-  object-fit: cover !important;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
   border-radius: var(--br-sm-2);
 }
 .main_projects .projects .projects_container_languages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   display: grid;
@@ -290,16 +304,15 @@ footer .css {
   grid-auto-flow: column;
 }
 .main_projects .projects .projects_container_languages .project_laguages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background: var(--color-grey-0);
   padding: 20px;
   border-radius: var(--br-sm-2);
   box-shadow: var(--box-shadow-1);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  justify-content: center;
-  align-items: center;
   transition: all 0.4s ease-in-out;
 }
 .main_projects .projects .projects_container_languages .project_laguages:hover {
@@ -321,14 +334,19 @@ footer .css {
   border-radius: var(--br-sm-2);
 }
 .main_projects .projects .projects_container_languages .project_laguages .bar_title {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: column;
+  place-items: center;
+  width: 90%;
+}
+.main_projects .projects .projects_container_languages .project_laguages .bar_title p {
+  height: auto;
 }
 .main_projects .projects .projects_container_languages .project_laguages .bar_title .done {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  width: 100%;
+  text-align: start;
   color: var(--color-secondary);
   text-shadow: var(--text-shadow-1);
   font-weight: bold;
@@ -337,6 +355,8 @@ footer .css {
 .main_projects .projects .projects_container_languages .project_laguages .bar_title .procent {
   font-size: 3rem;
   color: var(--color-secondary);
+  width: 100%;
+  text-align: end;
   text-shadow: var(--text-shadow-1);
   font-weight: bold;
   line-height: 1.3;
@@ -363,8 +383,9 @@ footer .css {
   padding: 2rem;
   width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-width: 810px;
 }
 .main_projects .algorythms .name {
@@ -400,7 +421,7 @@ footer .css {
   font-size: 3rem;
   color: var(--color-white);
   font-weight: bold;
-  text-shadow: var(--text-shadow-2);
+  text-shadow: var --text-shadow-2;
   margin-bottom: 1.5rem;
 }
 .main_projects .algorythms .codes .algorythm .code {
@@ -418,6 +439,10 @@ footer .css {
   box-shadow: var(--box-shadow-1);
 }
 .main_projects .contact_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   text-align: center;
   padding: 3rem 1.5rem;
@@ -434,6 +459,10 @@ footer .css {
   margin-bottom: 2rem;
 }
 .main_projects .contact_section .contact_details .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -451,12 +480,14 @@ footer .css {
   transform: scale(1.1);
 }
 .main_projects .contact_section .contact_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   background-color: var(--color-grey-0);
   padding: 2rem;
   border-radius: var(--br-sm-2);
   box-shadow: var(--box-shadow-1);
-  display: inline-block;
-  text-align: left;
   width: 100%;
   max-width: 600px;
 }
@@ -491,10 +522,11 @@ footer .css {
   resize: vertical;
 }
 .main_projects .contact_section .contact_form .btn_area {
-  width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .main_projects .contact_section .contact_form .btn_area .btn {
   background: var(--color-secondary);
@@ -525,15 +557,17 @@ footer .css {
     font-weight: bold;
   }
   .main {
-    grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
   }
   .main .right_content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding-right: 0;
   }
   .main .right_content .name {
@@ -547,8 +581,13 @@ footer .css {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   .main .left_content .image {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
   }
   .main .left_content .image img {
@@ -563,18 +602,27 @@ footer .css {
   .main .left_content .h-shape {
     width: 60%;
     height: 100%;
-    background-color: var(--color-secondary);
+    background-color: var --color-secondary;
     position: absolute;
     left: 0;
     top: 0;
     z-index: -1;
-    clip-path: polygon(0 0, 0% 100%, 82% 78%);
+    -webkit-clip-path: polygon(0 0, 0% 100%, 82% 78%);
+            clip-path: polygon(0 0, 0% 100%, 82% 78%);
   }
   .main_projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 100% !important;
     grid-template-columns: 1fr !important;
   }
   .main_projects .projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 100% !important;
     min-width: 0 !important;
     width: 100% !important;
@@ -586,12 +634,20 @@ footer .css {
     justify-items: center;
   }
   .main_projects .projects .projects_container .project {
-    width: 80% !important;
-    max-width: 80% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .main_projects .projects .projects_container .image_project {
-    width: 80% !important;
-    max-width: 80% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
     background: var(--color-grey-0);
     border-radius: var(--br-sm-2);
     box-shadow: var(--box-shadow-1);
@@ -604,10 +660,15 @@ footer .css {
   .main_projects .projects .projects_container .image_project .image {
     width: 100%;
     height: 100%;
-    object-fit: cover !important;
+    -o-object-fit: cover !important;
+       object-fit: cover !important;
     border-radius: var(--br-sm-2);
   }
   .main_projects .projects .projects_container_languages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
@@ -617,8 +678,12 @@ footer .css {
     justify-items: center;
   }
   .main_projects .projects .projects_container_languages .project_laguages {
-    width: 80% !important;
-    max-width: 80% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .main_projects .projects aside p {
     margin: 1.5rem 1.5rem 4.5rem 1.5rem;
@@ -626,11 +691,19 @@ footer .css {
     line-height: 2rem;
   }
   .main_projects .algorythms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 100% !important;
     min-width: 0 !important;
     width: 100% !important;
   }
   .main_projects .algorythms .codes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 100% !important;
     min-width: 0 !important;
     width: 100% !important;
@@ -640,8 +713,12 @@ footer .css {
     justify-items: center;
   }
   .main_projects .algorythms .codes .algorythm {
-    width: 80% !important;
-    max-width: 80% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
     text-align: center;
   }
 }/*# sourceMappingURL=styles.css.map */

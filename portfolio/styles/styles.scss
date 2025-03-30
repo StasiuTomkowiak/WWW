@@ -18,6 +18,17 @@
     --text-shadow-2: 2px 2px 15px #fff8f275;
 }
 
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex-center($direction: column) {
+    @include flex($direction, center, center);
+}
+
 body {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -78,17 +89,18 @@ footer {
     width: 100%;
 }
 
-.main {
-    height: auto;
-    padding-bottom: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    min-height: 85vh;
 
+.main {
+    @include flex(row, center, center);
+    padding-bottom: 2rem;
+    width: 100%;
+    min-height: 85vh;
+    height: 100%;
     .left_content {
-        display: flex;
-        align-items: center;
+        @include flex(center);
         position: relative;
+        width: 100%;
+        height: 100%;
         .h-shape {
             width: 100%;
             height: 100%;
@@ -102,9 +114,7 @@ footer {
         .image {
             width: 100%;
             max-width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-center(center);
             img {
                 max-width: 80%;
                 height: auto;
@@ -117,11 +127,9 @@ footer {
         }
     }
     .right_content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flex(column, center, center);
         padding-right: 10rem;
+        width: 100%;
         .name {
             width: 80%;
             min-width: 250px;
@@ -147,19 +155,14 @@ footer {
 
 //Projects
 .main_projects {
-    height: auto;
+    @include flex(column, center, center);
     padding-bottom: 4rem;
     width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     .projects {
+        @include flex(column, center, center);
         text-align: center;
         padding: 2rem;
         width: 80%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         min-width: 810px;
         .projects_container {
             display: grid;
@@ -169,18 +172,13 @@ footer {
             gap: 20px;
             justify-content: center;
             .project {
+                @include flex(column, space-between, center);
                 height: 100%;
                 background: var(--color-grey-0);
                 padding: 20px;
                 border-radius: var(--br-sm-2);
                 box-shadow: var(--box-shadow-1);
                 text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                justify-content: center;
-                align-items: center;
-
                 transition: all 0.4s ease-in-out;
                 &:hover {
                     transform: scale(1.05);
@@ -202,10 +200,8 @@ footer {
                     }
                 }
                 .btn {
+                    @include flex(row, center, center);
                     margin-top: 8%;
-                    display: inline-flex;
-                    justify-content: center;
-                    align-items: center;
                     width: 70px;
                     height: 40px;
                     background: var(--color-secondary);
@@ -226,45 +222,51 @@ footer {
                 }
 
                 .title {
-                    height: 10%;
-                    font-size: 1.5rem;
+                    height: auto;
+                    font-size: 3.5rem;
                     color: var(--color-white);
                     text-shadow: var(--text-shadow-2);
                     font-weight: bold;
                     line-height: 1.1;
+                    
                 }
                 .bar_title {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    flex-direction: row;
-                    justify-content: space-between;
-
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-auto-flow: column;
+                    place-items: center; 
+                    width: 90%;
+                    text-align: center;
+                    p {
+                        height: auto;
+                    }
                     .done {
-                        font-size: 1.5rem;
+                        font-size: 2rem;
+                        width: 100%;
+                        text-align: start;
                         color: var(--color-secondary);
                         text-shadow: var(--text-shadow-1);
                         font-weight: bold;
                         line-height: 1.3;
+                        
                     }
                     .procent {
-                        font-size: 1.5rem;
+                        font-size: 3rem;
+                        width: 100%;
+                        text-align: end;
                         color: var(--color-secondary);
                         text-shadow: var(--text-shadow-1);
                         font-weight: bold;
-                        line-height: 1.3;
+                        line-height: 2;
                     }
                 }
             }
             .image_project {
+                @include flex(column, center, center);
                 background: var(--color-grey-0);
                 border-radius: var(--br-sm-2);
                 box-shadow: var(--box-shadow-1);
                 text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
                 transition: all 0.4s ease-in-out;
                 &:hover {
                     transform: scale(1.05);
@@ -278,6 +280,7 @@ footer {
             }
         }
         .projects_container_languages {
+            @include flex(column, center, center);
             height: 100%;
             width: 100%;
             display: grid;
@@ -287,16 +290,12 @@ footer {
             justify-content: center;
             grid-auto-flow: column;
             .project_laguages {
+                @include flex(column, space-between, center);
                 background: var(--color-grey-0);
                 padding: 20px;
                 border-radius: var(--br-sm-2);
                 box-shadow: var(--box-shadow-1);
                 text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                justify-content: center;
-                align-items: center;
 
                 transition: all 0.4s ease-in-out;
                 &:hover {
@@ -319,14 +318,19 @@ footer {
                     }
                 }
                 .bar_title {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    flex-direction: row;
-                    justify-content: space-between;
-
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-auto-flow: column;
+                    place-items: center; 
+                    width: 90%;
+                    p {
+                        height: auto;
+                    }
                     .done {
-                        font-size: 1.5rem;
+                        font-size: 2rem;
+                        width: 100%;
+
+                        text-align: start;
                         color: var(--color-secondary);
                         text-shadow: var(--text-shadow-1);
                         font-weight: bold;
@@ -335,6 +339,8 @@ footer {
                     .procent {
                         font-size: 3rem;
                         color: var(--color-secondary);
+                        width: 100%;
+                        text-align: end;
                         text-shadow: var(--text-shadow-1);
                         font-weight: bold;
                         line-height: 1.3;
@@ -364,9 +370,7 @@ footer {
         text-align: center;
         padding: 2rem;
         width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+        @include flex(column, center, center);
         min-width: 810px;
         .name {
             font-size: 3rem;
@@ -399,7 +403,7 @@ footer {
                     font-size: 3rem;
                     color: var(--color-white);
                     font-weight: bold;
-                    text-shadow: var(--text-shadow-2);
+                    text-shadow: var (--text-shadow-2);
                     margin-bottom: 1.5rem;
                 }
 
@@ -421,6 +425,7 @@ footer {
         }
     }
     .contact_section {
+        @include flex(column, center, center);
         width: 100%;
         text-align: center;
         padding: 3rem 1.5rem;
@@ -432,11 +437,11 @@ footer {
             text-shadow: var(--text-shadow-2);
             margin-bottom: 1.5rem;
         }
-        
+
         .contact_details {
-            
             margin-bottom: 2rem;
             .btn {
+                @include flex(row, center, center);
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
@@ -454,15 +459,14 @@ footer {
                     background: var(--color-grey-1);
                     transform: scale(1.1);
                 }
+            }
         }
-    }
         .contact_form {
+            @include flex(column, flex-start, stretch);
             background-color: var(--color-grey-0);
             padding: 2rem;
             border-radius: var(--br-sm-2);
             box-shadow: var(--box-shadow-1);
-            display: inline-block;
-            text-align: left;
             width: 100%;
             max-width: 600px;
 
@@ -497,11 +501,10 @@ footer {
                     resize: vertical;
                 }
             }
-            .btn_area{
-                width:100%;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
+            .btn_area {
+                @include flex(column, center, center);
+                width: 100%;
+
                 .btn {
                     background: var(--color-secondary);
                     color: var(--color-white);
@@ -520,7 +523,6 @@ footer {
                     }
                 }
             }
-           
         }
     }
 }
@@ -537,15 +539,12 @@ footer {
         font-weight: bold;
     }
     .main {
+        @include flex(column, center, center);
         grid-template-columns: 1fr;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
 
         .right_content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            @include flex(column, center, center);
+
             padding-right: 0;
             .name {
                 font-size: 3rem;
@@ -556,10 +555,10 @@ footer {
             }
         }
         .left_content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            @include flex(column, center, center);
+
             .image {
+                @include flex-center(center);
                 margin: 0 auto;
                 img {
                     max-width: 60%;
@@ -575,7 +574,7 @@ footer {
             .h-shape {
                 width: 60%;
                 height: 100%;
-                background-color: var(--color-secondary);
+                background-color: var (--color-secondary);
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -585,9 +584,11 @@ footer {
         }
     }
     .main_projects {
+        @include flex(column, center, center);
         max-width: 100% !important;
         grid-template-columns: 1fr !important;
         .projects {
+            @include flex(column, center, center);
             max-width: 100% !important;
             min-width: 0 !important;
             width: 100% !important;
@@ -597,12 +598,14 @@ footer {
                 grid-auto-flow: column;
                 justify-items: center;
                 .project {
-                    width: 80% !important;
-                    max-width: 80% !important;
+                    @include flex(column, space-between, center);
+                    width: 100% !important;
+                    max-width: 100% !important;
                 }
                 .image_project {
-                    width: 80% !important;
-                    max-width: 80% !important;
+                    @include flex(column, center, center);
+                    width: 100% !important;
+                    max-width: 100% !important;
                     background: var(--color-grey-0);
                     border-radius: var(--br-sm-2);
                     box-shadow: var(--box-shadow-1);
@@ -621,6 +624,7 @@ footer {
             }
 
             .projects_container_languages {
+                @include flex(column, center, center);
                 width: 100% !important;
                 max-width: 100% !important;
                 min-width: 0 !important;
@@ -629,8 +633,9 @@ footer {
                 grid-auto-flow: column;
                 justify-items: center;
                 .project_laguages {
-                    width: 80% !important;
-                    max-width: 80% !important;
+                    @include flex(column, space-between, center);
+                    width: 100% !important;
+                    max-width: 100% !important;
                 }
             }
             aside p {
@@ -640,11 +645,13 @@ footer {
             }
         }
         .algorythms {
+            @include flex(column, center, center);
             max-width: 100% !important;
             min-width: 0 !important;
             width: 100% !important;
 
             .codes {
+                @include flex(column, center, center);
                 max-width: 100% !important;
                 min-width: 0 !important;
                 width: 100% !important;
@@ -653,8 +660,9 @@ footer {
                 grid-auto-flow: column;
                 justify-items: center;
                 .algorythm {
-                    width: 80% !important;
-                    max-width: 80% !important;
+                    @include flex(column, space-between, center);
+                    width: 100% !important;
+                    max-width: 100% !important;
                     text-align: center;
                 }
             }
