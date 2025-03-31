@@ -114,6 +114,8 @@ header h1 {
   font-weight: bold;
   display: inline-block;
   transition: all 0.4s ease-in-out;
+}
+.list .act a:hover {
   transform: scale(1.2);
   color: #5f85db;
 }
@@ -234,6 +236,7 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.4s ease-in-out;
   height: 100%;
   background: #1f1f1f;
   padding: 20px;
@@ -250,6 +253,7 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s ease-in-out;
   margin-top: 8%;
   width: 70px;
   height: 40px;
@@ -257,12 +261,11 @@ footer {
   color: #fff8f2;
   text-decoration: none;
   border-radius: 12px;
-  transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
   font-size: 1.5rem;
 }
 .main_projects .projects .projects_container .project .btn:hover {
-  background: #131313;
   transform: scale(1.1);
+  color: #131313;
 }
 .main_projects .projects .projects_container .project p {
   height: 65%;
@@ -272,11 +275,11 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s ease-in-out;
   background: #1f1f1f;
   border-radius: 14px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
-  transition: all 0.4s ease-in-out;
 }
 .main_projects .projects .projects_container .image_project:hover {
   transform: scale(1.05);
@@ -408,6 +411,7 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s ease-in-out;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -417,12 +421,11 @@ footer {
   color: #fff8f2;
   text-decoration: none;
   border-radius: 14px;
-  transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
   font-size: 1rem;
 }
 .main_projects .contact_section .contact_details .btn:hover {
-  background: #131313;
   transform: scale(1.1);
+  color: #131313;
 }
 .main_projects .contact_section .contact_form {
   display: flex;
@@ -481,14 +484,14 @@ footer {
   border-radius: 14px;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   text-align: center;
   border: none;
   outline: none;
 }
 .main_projects .contact_section .contact_form .btn_area .btn:hover {
-  background: #131313;
   transform: scale(1.1);
+  color: #131313;
 }
 
 @media (max-width: 810px) {
@@ -541,7 +544,7 @@ footer {
     border-radius: 14px;
     transition: all 0.4s ease-in-out;
   }
-  .main .left_content .image img:hover, .main .left_content .image img:active {
+  .main .left_content .image img:hover {
     transform: scale(1.05);
   }
   .main .left_content .h-shape {
@@ -597,10 +600,6 @@ footer {
     border-radius: 14px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    transition: all 0.4s ease-in-out;
-  }
-  .main_projects .projects .projects_container .image_project:hover {
-    transform: scale(1.05);
   }
   .main_projects .projects .projects_container .image_project .image {
     width: 100%;
