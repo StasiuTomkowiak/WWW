@@ -22,7 +22,7 @@ $text-shadow-2: 2px 2px 15px rgba(255, 248, 242, 0.46);
 }
 
 @function calculate-gap($columns) {
-    @return 10px*$columns; // Przykładowy wzór
+    @return 80px/$columns;
 }
 
 @mixin flex($direction: row, $justify: flex-start, $align: stretch) {
@@ -172,16 +172,16 @@ footer {
     bottom: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr auto 1fr; // Define three columns
+    grid-template-columns: 1fr auto 1fr; 
     align-items: center;
 
     .center {
-        grid-column: 2; // Place in the center column
+        grid-column: 2; 
         text-align: center;
     }
 
     .css {
-        grid-column: 3; // Place in the right column
+        grid-column: 3;
         text-align: right;
     }
 }
@@ -255,7 +255,7 @@ footer {
     }
 }
 
-//Projects
+
 .main_projects {
     @include flex(column, center, center);
     padding-bottom: 4rem;
@@ -456,7 +456,6 @@ footer {
 
         .contact_details {
             margin-bottom: 2rem;
-
             .btn {
                 @include flex(row, center, center);
                 @include hover-effect(1.1, $color-white, $color-black);
@@ -511,7 +510,6 @@ footer {
                     background-color: $color-primary;
                     color: $color-white;
                 }
-
                 textarea {
                     resize: vertical;
                 }
@@ -609,7 +607,7 @@ footer {
             width: 100% !important;
 
             .projects_container {
-                grid-template-columns: repeat(1, calculate-column-width(100%, 1, 0)); // Jedna kolumna na mniejszych ekranach
+                grid-template-columns: repeat(1, 1fr); 
                 grid-template-rows: repeat(6, 1fr);
                 grid-auto-flow: column;
                 justify-items: center;
@@ -639,7 +637,7 @@ footer {
             }
 
             .projects_container_languages {
-                grid-template-columns: repeat(1, calculate-column-width(100%, 1, 0)); // Jedna kolumna na mniejszych ekranach
+                grid-template-columns: repeat(1, 1fr);
                 grid-template-rows: repeat(4, 15rem);
                 @include flex(column, center, center);
                 width: 100% !important;
@@ -665,7 +663,7 @@ footer {
             width: 100% !important;
 
             .codes {
-                grid-template-columns: repeat(1, calculate-column-width(100%, 1, 0)); // Jedna kolumna
+                grid-template-columns: repeat(1, 1fr);
                 grid-template-rows: repeat(2, 1fr);
                 @include flex(column, center, center);
                 max-width: 100% !important;
@@ -688,17 +686,17 @@ footer {
 
     footer {
         display: grid;
-        grid-template-columns: 1fr 1fr; // Two columns for smaller screens
+        grid-template-columns: 1fr 1fr; 
         align-items: center;
 
         .center {
-            grid-column: 1; // Move to the first column
-            text-align: center; // Align to the right
+            grid-column: 1; 
+            text-align: center; 
         }
 
         .css {
-            grid-column: 2; // Move to the second column
-            text-align: center; // Align to the right
+            grid-column: 2; 
+            text-align: center;
         }
     }
 }
