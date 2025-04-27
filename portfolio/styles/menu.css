@@ -1,3 +1,4 @@
+
 .hamburger-menu {
     display: none;
     cursor: pointer;
@@ -71,5 +72,31 @@
         padding: 10px 20px;
         display: block;
         font-size: 1.2rem;
+    }
+ 
+    .no_js .navigation {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        right: 0 !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+    
+    .no_js .navigation .list {
+        display: block !important;
+    }
+    
+    .no_js .navigation .list .menu {
+        display: inline !important;
+        margin: 0 15px !important;
+        width: auto !important;
+    }
+    
+    .no_js .navigation .list .menu a {
+        display: inline-block !important;
+        padding: 5px !important;
+        font-size: 1rem !important;
     }
 }

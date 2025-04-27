@@ -1,0 +1,63 @@
+/* Styles dla uproszczonej galerii zdjęć */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Elementy galerii */
+.gallery-item {
+    background-color: #1f1f1f;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.gallery-item.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-image-container {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Komunikat o błędzie */
+.gallery-error {
+    grid-column: 1 / -1;
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #ff6b6b;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsywność */
+@media (max-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 810px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}

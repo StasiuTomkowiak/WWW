@@ -4,41 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Galeria - Stanisław Tomkowiak</title>
     <link rel="stylesheet" href="styles/styles.min.css">
     <link rel="stylesheet" href="styles/menu.css">
-
+    <link rel="stylesheet" href="styles/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
 </head>
 
 <body>
     <header class="header">
-        <h1>Stanisław Tomkowiak</h1>
+        <h1>Galeria</h1>
         <noscript class="no_js">
-            <nav class="navigation ">
+            <nav class="navigation">
                 <ul class="list">
-                    <li class="menu act"><a href="main.html">O mnie</a></li>
+                    <li class="menu"><a href="main.html">O mnie</a></li>
                     <li class="menu"><a href="projects.html">Projekty</a></li>
                     <li class="menu"><a href="interests.html">Zainteresowania</a></li>
                     <li class="menu"><a href="contacts.html">Kontakt</a></li>
-                    <li class="menu"><a href="gallery.html">Galeria</a></li>
+                    <li class="menu act"><a href="gallery.html">Galeria</a></li>
                 </ul>
             </nav>
         </noscript>
     </header>
 
-    <main class="main">
-        <section class="left_content">
-            <div class="h-shape"></div>
-            <div class="image">
-                <img src="images/me.jpg" alt="Moje zdjęcie">
-            </div>
-        </section>
-        <section class="right_content">
-            <h2 class="name">Witaj na mojej <span class="blue">stronie!</span></h2>
-            <p>Jestem studentem trzeciego roku informatyki algorytmicznej z pasją do programowania i technologii. Mam na
-                imię <span class="blue">Stasiu.</span></p>
-        </section>
+    <main class="main_projects">
+        <div id="gallery-container" class="gallery-container"></div>
 
+        <noscript>
+            <div class="gallery-error">
+                <h2 class="name">JavaScript jest wyłączony</h2>
+                <p>Aby wyświetlić galerię zdjęć, włącz obsługę JavaScript w przeglądarce lub skorzystaj z innej przeglądarki.</p>
+            </div>
+        </noscript>
     </main>
 
     <footer>
@@ -49,9 +47,10 @@
                     alt="Valid CSS!" />
             </a>
         </p>
-
     </footer>
+
     <script src="scripts/menu.js"></script>
+    <script src="scripts/gallery.js"></script>
 </body>
 
 </html>
