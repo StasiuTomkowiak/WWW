@@ -7,6 +7,8 @@
     <title>Zainteresowania</title>
     <link rel="stylesheet" href="styles/styles.min.css">
     <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
 </head>
 
 <body>
@@ -63,7 +65,7 @@
             <section class="codes">
                 <section class="algorythm">
                     <h2 class="name">Algorytm BFS</h2>
-                    <code class="code">
+                    <code class="code language-python line-numbers">
 # Function to find BFS of Graph from given source s
 def bfsOfGraph(adj, s):
     
@@ -112,7 +114,7 @@ if __name__ == "__main__":
                 </section>
                 <section class="algorythm">
                     <h2 class="name">Algorytm DFS</h2>
-                    <code class="code">
+                    <code class="code language-python line-numbers">
     def dfs_rec(adj, visited, s):
     # Mark the current vertex as visited
     visited[s] = True
@@ -171,6 +173,11 @@ if __name__ == "__main__":
 
     </footer>
     <script src="scripts/menu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="scripts/syntax-highlight.js"></script>
 </body>
 
 </html>
